@@ -1,10 +1,12 @@
-import React from 'react'
+import {React, useContext} from 'react'
 import { Name,LastName } from '../App'
 
 const ThirdPage = () => {
+    const fname = useContext(Name);
+    const lname = useContext(LastName);
   return (
     <>
-    <Name.Consumer>
+    {/* <Name.Consumer>
 {(first_name)=>{
     
     return(
@@ -20,9 +22,16 @@ const ThirdPage = () => {
         </LastName.Consumer>
     )
 }}
-    </Name.Consumer>
+    </Name.Consumer> */}
+
+<h1>My Name is {fname} {lname}</h1>
+                    
     </>
   )
 }
+//Here everything working fine in the usecase of CPC 
+//C - createContext()  C - Provider  C - Consumer
 
+// But now it's making a callback hell Like Structure so we
+// have to implement useContext method insted of Consumer
 export default ThirdPage
